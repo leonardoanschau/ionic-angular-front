@@ -7,7 +7,7 @@ export class StorageService {
 
     getLocalUser() : LocalUser{
         let usr = localStorage.getItem(STORAGE_KEYS.localUser)
-        if (usr = null){
+        if (usr == null){
             return null;
         }
         else{
