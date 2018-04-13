@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage, MenuController } from 'ionic-angular';
-import { CategoriasPage } from '../categorias/categorias';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { AuthService } from '../../services/auth.service';
 
@@ -28,9 +27,14 @@ export class HomePage {
     this.menu.swipeEnable(true);   
   }
 
+  ionViewDidEnter(){
+    //por enquanto essa solução, mas eu teria que utilizar refreshToken
+  }
+
   login(){
     this.auth.authenticate(this.creds).subscribe(response => {
       this.auth.successfulLogin(response.headers.get('Authorization'));
+      this.auth.storage.getLocalUser();
       this.navCtrl.setRoot('CategoriasPage');
     },
   error => {});
