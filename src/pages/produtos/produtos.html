@@ -15,7 +15,7 @@
 
 <ion-content padding>
     <ion-list>
-        <button ion-item *ngFor="let item of items" (click)="showDetail()">
+        <button ion-item *ngFor="let item of items" (click)="showDetail(item.id)">
           <ion-thumbnail item-start>
             <img [src]="item.imageUrl || 'assets/imgs/placeholder-800x800.png'">
           </ion-thumbnail>
