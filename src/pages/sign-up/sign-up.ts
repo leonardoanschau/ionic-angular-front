@@ -68,12 +68,12 @@ export class SignUpPage {
       error => {});
   }
   signupUser() {
-    /*this.clienteService.insert(this.formGroup.value)
+    this.clienteService.insert(this.formGroup.value)
       .subscribe(response => {
         this.showInsertOk();
       },
       error => {});
-  */
+  
   }
 
   showInsertOk() {
