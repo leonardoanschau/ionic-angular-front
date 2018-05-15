@@ -15,8 +15,8 @@ export class ClienteService{
         return this.http.get(`${API_CONFIG.baseUrl}/clientes/${id}`);
     }
 
-    findByEmail(email: string) : Observable<ClienteDTO>{
-        return this.http.get<ClienteDTO>(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
+    findByEmail(email: string){
+        return this.http.get(`${API_CONFIG.baseUrl}/clientes/email?value=${email}`);
     }
 
     insert(obj : ClienteDTO) {

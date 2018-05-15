@@ -23,7 +23,7 @@ export class ProfilePage {
     let localUser = this.storage.getLocalUser();
     if(localUser && localUser.email){
       this.clienteService.findByEmail(localUser.email).subscribe(response =>{
-        this.cliente = response;
+        this.cliente = response as ClienteDTO;
         //buscar imagem
       },
       error => {
